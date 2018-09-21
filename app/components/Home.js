@@ -1,4 +1,6 @@
 var React = require('react');
+var api = require('../utils/api');
+var PropTypes = require('prop-types');
 
 class LocationInput extends React.Component {
   constructor(props) {
@@ -22,7 +24,14 @@ class LocationInput extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    // Call api function to get lat lng and restaurants
+    
+    api.getLatLng(this.state.location)
+      .then(api.getRestaurants)
+      .then((result) => {
+        this.props.onSubmit(result);
+      })
+      .catch(api.handleError);
+
     // call props onsubmit with returned restaurants array
   }
   render() {
@@ -48,6 +57,9 @@ class LocationInput extends React.Component {
   }
 }
 
+LocationInput.propTypes = {
+  onSubmit: PropTypes.func.isRequired
+}
 
 class Home extends React.Component {
   constructor(props) {
