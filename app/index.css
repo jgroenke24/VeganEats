@@ -8,4 +8,14 @@ body {
   background: #00b09b;
   background: -webkit-linear-gradient(to left, #96c93d, #00b09b);
   background: linear-gradient(to left, #96c93d, #00b09b);
+  color: white;
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+}
+.logo {
+  font-size: 2em;
+  font-weight: 700;
 }
