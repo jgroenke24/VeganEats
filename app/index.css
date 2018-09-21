@@ -8,7 +8,10 @@ body {
   background: #00b09b;
   background: -webkit-linear-gradient(to left, #96c93d, #00b09b);
   background: linear-gradient(to left, #96c93d, #00b09b);
-  color: white;
+  color: #fff;
+}
+h2 {
+  margin-top: 0;
 }
 
 .container {
@@ -18,4 +21,31 @@ body {
 .logo {
   font-size: 2em;
   font-weight: 700;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input[type="text"],
+.button {
+  background: none;
+  border: 1px solid #fff;
+  width: 250px;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border-radius: 60px;
+  color: #fff;
+  font-size: 1em;
+  letter-spacing: .1em;
+  text-align: center;
+}
+.button {
+  margin-top: 10px;
+}
+.button:hover,
+.button:focus {
+  background: #fff;
+  color: #00b09b;
 }

@@ -1,10 +1,16 @@
 var React = require('react');
+var Fragment = React.Fragment;
 var Header = require('./Header');
+var Home = require('./Home');
+
 
 class App extends React.Component {
   render() {
     return (
-      <Header />
+      <Fragment>
+        <Header />
+        <Home />
+      </Fragment>
     );
   }
 }
