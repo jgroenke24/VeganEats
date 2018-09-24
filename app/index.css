@@ -49,3 +49,7 @@ input[type="text"],
   background: #fff;
   color: #00b09b;
 }
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+}

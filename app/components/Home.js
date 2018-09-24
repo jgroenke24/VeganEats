@@ -2,6 +2,29 @@ var React = require('react');
 var api = require('../utils/api');
 var PropTypes = require('prop-types');
 
+function RestaurantGrid(props) {
+  return (
+    <ul className='restaurant-list'>
+      {props.restaurants.map(function(restaurant) {
+        return (
+          <li key={restaurant.restaurant.name} className='list-item'>
+            <div className='list-name'>
+              {restaurant.restaurant.name}
+            </div>
+            <div>
+              {restaurant.restaurant.location.address}
+            </div>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
+RestaurantGrid.propTypes = {
+  restaurants: PropTypes.array.isRequired
+}
+
 class LocationInput extends React.Component {
   constructor(props) {
     super(props);
@@ -92,6 +115,11 @@ class Home extends React.Component {
         {!restaurants &&
           <LocationInput 
             onSubmit={this.handleSubmit}
+          />}
+          
+        {restaurants &&
+          <RestaurantGrid
+            restaurants={this.state.restaurants}
           />}
       
       </main>

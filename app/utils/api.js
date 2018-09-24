@@ -1,7 +1,5 @@
 var axios = require('axios');
 
-var zomatoKey = process.env.ZOMATO_KEY;
-var geoKey = process.env.GEO_KEY;
 
 function getLatLng(location) {
   return axios.get('https://www.mapquestapi.com/geocoding/v1/address', {
@@ -25,7 +23,7 @@ function getRestaurants(latLng) {
       lat: latLng.lat,
       lon: latLng.lng,
       q: 'vegan',
-      radius: 5,
+      radius: 8000,
       sort: 'real_distance'
     }
   };
